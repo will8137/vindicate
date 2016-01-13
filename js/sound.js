@@ -27,15 +27,11 @@ soundManager.prototype.loadTrack = function(filePath, callback) {
     req.send();
 };
 
-soundManager.prototype.play = function(buffer, volume) {
+soundManager.prototype.play = function(src) {
     //create a source node from the buffer 
-    var src = ctx.createBufferSource();
-    src.buffer = buffer;
+    
     //connect to the final output node (the speakers) 
-    var gainNode = ctx.createGain();
-    gainNode.gain.value = volume;
-    src.connect(gainNode);
-    gainNode.connect(ctx.destination); 
+
     //play immediately 
     src.start(0); 
 };

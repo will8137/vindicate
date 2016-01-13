@@ -10,20 +10,23 @@ Vindicate.init = function() {
 	Event.trigger("Vindicate:init")
 	soundManager.init();
 	var randInt = Math.ceil(Math.random(0, 10) * 10);
-	Vindicate.loadTrack("assets/audio/KS.mp3");
+	Vindicate.loadTrack("assets/audio/" + randInt +".mp3");
 }
 
 Vindicate.loadTrack = function(filePath) {
 
 	soundManager.loadTrack(filePath, function(buffer){
 		$('#mount').empty();
-		logo.create('#mount', "assets/images/logo.png")
-		soundManager.play(buffer, 0.5);
+		logo.create('#mount', "assets/images/logo.png");
+		logo.visualize($('.logo'), buffer, 0.5);
 	});
 
 }
 
 //On DOM load
 $(function() {
+	navigator.webkitGetUserMedia({ audio: true}, function(mediaStream){ 
+		console.log(mediaStream.getAudioTracks());
+	}, function(error) { console.log(error) })
 	Vindicate.init();
 })
