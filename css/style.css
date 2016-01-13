@@ -1,0 +1,36 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+@font-face {
+	font-family: 'News Cycle';
+	src: url('assets/fonts/NewsCycle-Regular.ttf') format('ttf'),
+        url('assets/fonts/NewsCycle-Bold.ttf') format('ttf');
+}
+
+body {
+	font-family: 'News Cycle', sans-serif;
+	background: #16a085;
+}
+
+.loading {
+	padding: 20px;
+	text-align: center;
+	font-size: 32px;
+}
+
+/* Intro screen */
+.intro-screen {
+	padding: 20px;
+	text-align: center;
+}
+
+.intro-screen-title {
+	font-size: 50px;
+}
+
+.intro-screen-items {
+	margin-top: 20px;
+	font-size: 30px;
+}
