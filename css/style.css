@@ -11,7 +11,27 @@
 
 body {
 	font-family: 'News Cycle', sans-serif;
-	background: #16a085;
+	-webkit-animation: backgroundThrob 20s infinite; /* Chrome, Safari, Opera */ 
+    animation: backgroundThrob 20s infinite;
+}
+
+@-webkit-keyframes backgroundThrob {
+    0%  {background: #16a085}
+    20% {background: #2980b9}
+    40% {background: #f39c12;}
+    60% {background: #8e44ad;}
+    80% {background: #2c3e50;}
+    100% {background: #16a085}
+}
+
+/* Standard syntax */
+@keyframes backgroundThrob {
+    0%  {background: #16a085}
+    20% {background: #2980b9}
+    40% {background: #f39c12;}
+    60% {background: #8e44ad;}
+    80% {background: #2c3e50;}
+    100% {background: #16a085}
 }
 
 .loading {
@@ -20,17 +40,12 @@ body {
 	font-size: 32px;
 }
 
-/* Intro screen */
-.intro-screen {
-	padding: 20px;
-	text-align: center;
-}
-
-.intro-screen-title {
-	font-size: 50px;
-}
-
-.intro-screen-items {
-	margin-top: 20px;
-	font-size: 30px;
+img {
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	top: 50%;
+	left: 50%;
+	margin-left: -100px;
+	margin-top: -100px;
 }
