@@ -48,4 +48,5 @@ img {
 	left: 50%;
 	margin-left: -100px;
 	margin-top: -100px;
+	transition: height 0.5s width 0.5s;
 }
