@@ -15,3 +15,13 @@ $(function() {
 	// }, function(error) { console.log(error) })
 	Vindicate.init();
 })
+
+Events.on('Vindicate:ready', function(){
+	soundManager.loadTrack("assets/audio/osmosis.mp3", function(buffer){
+		Events.emit('el:empty', '#mount');
+		var settings = {
+			visualizer: 2
+		}
+		Visualizer.visualize(settings, $('.mount'), buffer, 0.5);
+	});
+})

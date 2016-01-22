@@ -7,7 +7,7 @@ logo.prototype.create = function(mountPoint, pathToFile) {
 		mountPoint: String,
 		pathToFile: String
 	*/
-	Events.emit("introScreen:init");
+	Events.emit("logo:init");
 
 	this.mountPoint = mountPoint;
 	this.pathToFile = pathToFile;
@@ -15,7 +15,7 @@ logo.prototype.create = function(mountPoint, pathToFile) {
 	
 	$(this.mountPoint).append(logo.loadImage(this.pathToFile));
 
-	Events.emit("introScreen:ready");
+	Events.emit("logo:ready");
 };
 
 logo.prototype.loadImage = function(pathToFile) {
